@@ -1,7 +1,7 @@
-
-
 import logo from './logo.svg';
 import './App.css';
+import Hooks from './Hooks'
+import './Container.css';
 import React, {Component} from 'react';
 
 class App extends Component {
@@ -34,10 +34,14 @@ this.setState({firstName: e.target.value})
     console.log("final state", this.state.firstName);
     console.log("final state", this.lastName);
   return (
-    <div className="container">
+    <div className="Container">
+      <form>
+      <h1>App in Class</h1>
+      <Hooks/>
       <input type="text" placeholder="first name" value={this.state.firstName}onChange={e=> this.setFirstName(e)}/>
       <input type="text" placeholder="last name" value={this.state.lastName}onChange={e=> this.setLastName(e)}/>
       <input type="submit" onClick={this.submit} />
+      </form>
     </div>
   );
   }
